@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="form-container">
+    <h1 class="form-heading">Sign Up On ROAM ROSTER</h1>
+    <form action="/signup" method="POST" novalidate class="form-card needs-validation">
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username" placeholder="username" class="form-input" required>
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Username field should not be empty</div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="email" placeholder="example@example.com" class="form-input" required>
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Email field should not be empty</div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" placeholder="password" class="form-input" required>
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Password field should not be empty</div>
+        </div>
+        <button type="submit" class="form-button signup-button">Sign Up</button>
+    </form>
+</div>

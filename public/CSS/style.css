@@ -1,0 +1,918 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+
+  ::selection{
+    background-color: #FF385C;
+    color: white;
+  }
+.container{
+    flex: 1;
+}
+  
+/* General Navbar Styling */
+.navbar {
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow to make the navbar stand out */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF385C;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand i {
+    font-size: 2rem;  /* Larger world icon */
+    color: #FF385C;   /* Light pink color for the world icon */
+    margin-right: 0.5rem;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.navbar-nav{
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+/* Hover Effects for Navbar Items */
+.navbar-nav .nav-item .nav-link:hover, 
+.navbar-nav .nav-item .dropdown-toggle:hover, 
+.navbar-nav .nav-item .dropdown-item:hover {
+    color: #FF385C;
+    background-color: #ffe6ea;  /* Light pink background */
+    border-radius: 0.5rem;
+}
+
+/* Icon Hover Effects */
+.navbar-nav .nav-item .nav-link i,
+.navbar-nav .nav-item .dropdown-toggle i,
+.navbar-nav .nav-item .dropdown-item i {
+    margin-right: 0.5rem;
+    color: #FF385C;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover i,
+.navbar-nav .nav-item .dropdown-toggle:hover i,
+.navbar-nav .nav-item .dropdown-item:hover i {
+    color: #FF385C;
+}
+
+/* Styling the Search Form */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 0.5rem;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+    margin-left: 1rem;  /* Move search bar slightly to the right */
+}
+
+.search-bar:focus-within {
+    border-color: #FF385C;
+}
+
+.search-bar .form-control {
+    margin-right: 0.5rem;
+    border: none;
+    box-shadow: none;
+    background-color: #f8f8f8;
+    margin-left: 1rem; /* Move search input slightly to the right */
+}
+
+.search-bar .form-control:focus {
+    box-shadow: none;
+    background-color: #fff;
+}
+
+.search-bar .search-btn {
+    border: none;
+    background-color: #FF385C;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar .search-btn:hover {
+    background-color: #e03350;
+}
+
+/* Navbar Toggler Styling */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28134, 134, 134, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Dropdown Menu Styling */
+.nav-item.dropdown .dropdown-menu {
+    border-radius: 0.5rem;
+    border: 1px solid #e0e0e0;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #f8f8f8;
+    color: #FF385C;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .search-bar {
+        flex-direction: row;
+        margin-left: 0; /* Reset margin for mobile view */
+    }
+
+    .search-bar .form-control {
+        margin-right: 0;
+        margin-left: 0; /* Reset margin for mobile view */
+        margin-bottom: 0;
+    }
+}
+
+/* footer */
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #333 0%, #444 100%); /* Gradient background for depth */
+    color: #f8f9fa; /* Light text color */
+    padding: 3rem 0; /* Increased vertical padding */
+    text-align: center; /* Center-align text */
+}
+
+.footer-container {
+    max-width: 1200px; /* Max width to center content */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 1rem; /* Horizontal padding */
+}
+
+.footer-social {
+    margin-bottom: 2rem; /* Increased space below social icons */
+}
+
+.footer-social a {
+    color: #f8f9fa; /* Light color for icons */
+    font-size: 1.5rem; /* Icon size */
+    margin: 0 1rem; /* Space between icons */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and scale transition on hover */
+}
+
+.footer-social a:hover {
+    color: #fe424d; /* Theme color on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+}
+
+.footer-brand {
+    font-size: 1.5rem; /* Larger font size for brand */
+    font-weight: 700; /* Bold font */
+    margin-bottom: 1rem; /* Space below brand */
+}
+
+.footer-links {
+    font-size: 1rem; /* Font size for links */
+}
+
+.footer-links a {
+    color: #f8f9fa; /* Light color for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 1rem; /* Space between links */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.footer-links a:hover {
+    color: #fe424d; /* Theme color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* LOGIN AND SIGNUP PAGES */
+
+/* General Styling */
+.form-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.form-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* Increased margin for better spacing */
+    text-align: center;
+    color: #333;
+    line-height: 1.3;
+    max-width: 90%; /* Prevents overflow on smaller screens */
+    text-transform: uppercase; /* Adds a modern touch */
+    background: linear-gradient(90deg, #fe424d, #f65d50); /* Gradient background */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Text color set to transparent for gradient effect */
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Card Styling */
+.form-card {
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem; /* Increased padding for better usability */
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    box-sizing: border-box;
+}
+
+/* Feedback Messages */
+.valid-feedback, .invalid-feedback {
+    display: none;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.valid-feedback {
+    color: #28a745;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+}
+
+/* Button Styling */
+.form-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #fe424d;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.form-button:hover {
+    background-color: #e03a47; /* Darker color on hover */
+}
+
+.signup-button {
+    background-color: #fe424d;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .form-heading {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-heading {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+    }
+
+    .form-input {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-heading {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-card {
+        padding: 1rem;
+    }
+
+    .form-input {
+        padding: 0.5rem;
+    }
+
+    .form-button {
+        font-size: 0.875rem;
+    }
+}
+
+
+/* EDIT PAGE / NEW PAGE */
+
+/* Styles for form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    max-width: 800px; /* Adjust max-width as needed */
+}
+
+/* Styles for the form */
+.form-box {
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for better contrast */
+}
+
+/* Title styling */
+.form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* Increased margin for better spacing */
+    color: #fe424d; /* Theme color */
+}
+
+/* Form input styling */
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+/* Form label styling */
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Button styling */
+.btn-submit,
+.btn-edit,
+.btn-add {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #fe424d; /* Theme color */
+    border: none;
+    border-radius: 0.375rem;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem; /* Space above button */
+}
+
+/* Validation feedback styling */
+.valid-feedback {
+    display: block;
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+
+
+/* INDEX PAGE */
+
+
+/* Style for the page title */
+.page-title {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF385C; /* Main theme color */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for text */
+}
+
+/* Style for listing links */
+.listing-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+
+/* Style for listing cards */
+.listing-card {
+    border: none;
+    border-radius: 1.5rem; /* More rounded corners */
+    overflow: hidden; /* Ensure image does not overflow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(145deg, #fff, #f8f8f8); /* Subtle gradient background */
+    margin-bottom: 1rem;
+}
+
+.listing-card:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    border: 1px solid #FF385C; /* Highlighted border on hover */
+    background-color: #fff; /* Ensure background is white on hover */
+}
+
+/* Image Styling */
+.card-img-top {
+    width: 100%;
+    height: 18rem; /* Fixed height for the image */
+    object-fit: cover; /* Ensure image covers the area */
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+    transition: transform 0.3s ease;
+}
+
+.listing-card:hover .card-img-top {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Style for card body */
+.card-body {
+    padding: 1.5rem;
+    background-color: #fff;
+    flex: 1; /* Allows the body to take up remaining space */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333; /* Dark color for title */
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover {
+    color: #FF385C; /* Highlight title color on hover */
+}
+
+.card-text {
+    font-size: 1.125rem;
+    color: #555; /* Slightly lighter color for text */
+    margin-bottom: 0;
+}
+
+/* Price Styling */
+.card-text b {
+    font-size: 1.25rem; /* Slightly larger title */
+    color: #FF385C; /* Matching color for price */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .card-body {
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* SHOW PAGE */
+/* General Container for Listing Page */
+/* General Container Styling */
+#listing-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Title Styling */
+#listing-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Listing Card Styling */
+#listing-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+#listing-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Card Body Styling */
+#listing-card-body {
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+/* Description Styling */
+#listing-description {
+    font-size: 1rem;
+    color: #555;
+}
+
+#listing-price {
+    font-size: 1.25rem;
+    color: #FF385C;
+}
+
+#listing-location, #listing-country {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Button Styling */
+#listing-actions {
+    margin-top: 2rem;
+}
+
+#btn-custom-edit,
+#btn-custom-delete,
+#btn-custom-submit {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#btn-custom-edit {
+    background-color: #20c997; /* Teal */
+    border-color: #20c997;
+    color: #fff;
+}
+
+#btn-custom-edit:hover {
+    background-color: #1aa179;
+    border-color: #188f6e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn-custom-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+#btn-custom-delete:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn-custom-submit {
+    background-color: #20c997; /* Teal */
+    color: #fff;
+    border-color: #20c997;
+    padding: 0.5rem 1.5rem;
+}
+
+#btn-custom-submit:hover {
+    background-color: #1aa179;
+    border-color: #1aa179;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Comment Section Styling */
+#comment-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+#rating, #comment {
+    margin-bottom: 1.5rem;
+}
+
+#form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control, .form-range {
+    border-radius: 0.5rem;
+}
+
+/* Review Section Styling */
+#reviews-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+}
+
+#review-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+#review-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#review-author {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+}
+
+#review-comment {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Review Delete Button Styling */
+#btn-custom-review-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#btn-custom-review-delete:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199.98px) {
+    #listing-title {
+        font-size: 1.75rem;
+    }
+    
+    #listing-price {
+        font-size: 1.125rem;
+    }
+
+    #comment-title {
+        font-size: 1.25rem;
+    }
+
+    #reviews-title {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .col-md-8 {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .col-md-10 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #listing-title {
+        font-size: 1.5rem;
+    }
+
+    #listing-description {
+        font-size: 0.875rem;
+    }
+
+    #listing-price {
+        font-size: 1rem;
+    }
+
+    #comment-title {
+        font-size: 1.125rem;
+    }
+
+    #reviews-title {
+        font-size: 1rem;
+    }
+
+    .card-img-top {
+        height: auto;
+    }
+
+    .form-control {
+        font-size: 0.875rem;
+    }
+
+    #btn-custom-edit,
+    #btn-custom-delete,
+    #btn-custom-submit {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+/* MAP */
+
+#map {
+    width: 100vh; 
+    height: 400px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+    margin-top: 20px;
+}
+
+#filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  max-width: 120px;
+  text-align: center;
+}
+
+.filter-item:hover {
+  background-color: #fe424d;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.filter-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.filter-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+#tax-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.form-check.form-switch {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  width: 60px;
+  height: 34px;
+  margin-right: 1rem;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* Container for toggle switch */
+#tax-toggle-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevents shrinking */
+    margin-left: auto; /* Aligns the toggle switch to the rightmost side */
+  }
+  
+  /* Styling specifically for the toggle switch */
+  #tax-toggle-container .form-check-input {
+    width: 40px; /* Smaller width of the switch */
+    height: 20px; /* Smaller height of the switch */
+    cursor: pointer;
+    background-color: #ccc; /* Default background color */
+    border-radius: 20px; /* Rounded corners */
+    position: relative; /* To position the slider inside */
+    appearance: none; /* Remove default styling */
+  }
+  
+  /* Styling the slider inside the switch */
+  #tax-toggle-container .form-check-input:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s;
+    left: 2px; /* Position of the slider */
+    bottom: 2px;
+  }
+  
+  /* Change background color when switch is checked */
+  #tax-toggle-container .form-check-input:checked {
+    background-color: #fe424d; /* Color when checked */
+  }
+  
+  /* Move the slider when the switch is checked */
+  #tax-toggle-container .form-check-input:checked:before {
+    transform: translateX(20px); /* Move slider to the right */
+  }
+  
+  /* Label styling */
+  #tax-toggle-container .form-check-label {
+    font-size: 0.875rem; /* Smaller font size */
+    font-weight: 500;
+    color: #333;
+    margin-left: 0.5rem; /* Space between switch and label */
+  }
+  
+
+
+.tax-info{
+    display: none;
+}
+#tax-toggle-container{
+    border: 1px solid black;
+    padding: 1rem 0.7rem;
+    border-radius: 1rem;
+}
