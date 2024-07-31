@@ -47,6 +47,10 @@ const listingSchema = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User",
+    },
+    catogery:{
+        type:String,
+        required:true
     }
 });
 

@@ -25,11 +25,16 @@ router.get("/new",isLoggedIn,listingController.renderNewForm);
 router
     .route("/:id")
     .get(wrapAsync(listingController.showListings))
-    .put(isLoggedIn,isOwner,upload.single("listing[image]"),validateListing,wrapAsync(listingController.updateFormListing))
+    .put(isLoggedIn,isOwner,upload.single("listing[image]"),
+    // validateListing,
+    wrapAsync(listingController.updateFormListing))
     .delete(isLoggedIn,isOwner,wrapAsync(listingController.deleteForm));
 
 //EDIT ROUTE
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.renderEditForm));
+
+//CATOGERY RENDER ROUTE
+router.get("/catogery/:catogeryList",wrapAsync(listingController.catogery));
 
 
 module.exports = router;

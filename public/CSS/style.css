@@ -855,6 +855,10 @@ body{
   color: #333;
 }
 
+#filter-container a{
+    text-decoration: none;
+    color: black;
+}
 
 /* Container for toggle switch */
 #tax-toggle-container {
@@ -916,3 +920,4 @@ body{
     padding: 1rem 0.7rem;
     border-radius: 1rem;
 }
+

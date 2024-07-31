@@ -8,6 +8,12 @@ module.exports.index = async (req, res) => {
     res.render("listings/index.ejs", { allListings });
 };
 
+module.exports.catogery = async(req,res)=>{
+    let {catogeryList} = req.params;
+    let catogeryListings = await Listing.find({catogery:catogeryList});
+    res.render("listings/catogery.ejs",{catogeryListings});
+};
+
 module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
 };
@@ -15,6 +21,7 @@ module.exports.renderNewForm = (req, res) => {
 module.exports.createListing = async (req, res, next) => {
     try {
         const { location } = req.body.listing;
+        console.log(req.body);
 
         // Fetch coordinates from MapTiler Geocoding API
         const result = await maptilerclient.geocoding.forward(location);
@@ -94,3 +101,5 @@ module.exports.deleteForm = async (req, res) => {
     await Listing.findOneAndDelete({ _id: id });
     res.redirect("/listings");
 };
+
+
