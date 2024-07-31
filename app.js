@@ -9,7 +9,6 @@ const path = require("path");
 const methodoverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const CustomError = require("./utils/CustomError.js");
-const helmet = require("helmet");
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
