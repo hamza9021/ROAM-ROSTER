@@ -1,0 +1,54 @@
+
+/* footer */
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #333 0%, #444 100%); /* Gradient background for depth */
+    color: #f8f9fa; /* Light text color */
+    padding: 3rem 0; /* Increased vertical padding */
+    text-align: center; /* Center-align text */
+}
+
+.footer-container {
+    max-width: 1200px; /* Max width to center content */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 1rem; /* Horizontal padding */
+}
+
+.footer-social {
+    margin-bottom: 2rem; /* Increased space below social icons */
+}
+
+.footer-social a {
+    color: #f8f9fa; /* Light color for icons */
+    font-size: 1.5rem; /* Icon size */
+    margin: 0 1rem; /* Space between icons */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and scale transition on hover */
+}
+
+.footer-social a:hover {
+    color: #fe424d; /* Theme color on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+}
+
+.footer-brand {
+    font-size: 1.5rem; /* Larger font size for brand */
+    font-weight: 700; /* Bold font */
+    margin-bottom: 1rem; /* Space below brand */
+}
+
+.footer-links {
+    font-size: 1rem; /* Font size for links */
+}
+
+.footer-links a {
+    color: #f8f9fa; /* Light color for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 1rem; /* Space between links */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.footer-links a:hover {
+    color: #fe424d; /* Theme color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
