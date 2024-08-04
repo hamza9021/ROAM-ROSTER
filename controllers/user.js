@@ -1,4 +1,7 @@
 const User = require("../models/user.js");
+const otpGenerator = require('otp-generator');
+const nodemailer = require('nodemailer');
+const OTP = require("../models/otp.js");
 
 
 module.exports.renderSignupForm = (req,res)=>{
@@ -54,4 +57,46 @@ module.exports.logout = (req,res,next)=>{
             res.redirect("/listings");
         }
     })
+}
+
+
+module.exports.renderOtp = async(req,res)=>{
+    console.log(req.user.email);
+    if(req.user){
+        let email = req.user.email;
+        const otp = otpGenerator.generate(6, { upperCase: false, specialChars: false });
+        const newOtp = new OTP({email,otp});
+        await newOtp.save();
+    
+    
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: process.env.MY_EMAIL,
+              pass: process.env.ONLY_GPASS
+            }
+          });
+    
+    
+          const mailOptions = {
+            from: process.env.MY_EMAIL,
+            to: email,
+            subject: 'Your OTP Code',
+            text: `Your OTP code is ${otp}`
+          };
+    
+          await transporter.sendMail(mailOptions);
+          res.render("users/otpVerification.ejs");
+    }
+}
+
+
+module.exports.otpVerification = async(req,res)=>{
+    let {otp} = req.body;
+    let username = req.user.username;
+    
+    if(OTP.find({otp})){
+        await User.findOneAndUpdate({username},{verified:true});
+        res.redirect(`/listings`);
+    }
 }

@@ -24,6 +24,10 @@ const userSchema = new Schema({
     gender:{
         type:String,
         required:true
+    },
+    verified:{
+        type: Boolean, 
+        default: false 
     }
 });
 userSchema.plugin(passportLocalMongoose);

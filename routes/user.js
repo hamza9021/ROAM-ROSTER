@@ -6,6 +6,8 @@ const {saveRedirectUrl} = require("../middleware.js");
 const userController = require("../controllers/user.js");
 
 
+
+
 //get login & post login
 router
 .route("/login")
@@ -21,6 +23,15 @@ router
 .get(userController.renderSignupForm)
 .post(wrapAsync(userController.signup)
 );
+
+
+// otp Verification
+
+router.route("/user/otp/verification")
+.get(userController.renderOtp)
+.post(userController.otpVerification);
+
+
 
 //LOG OUT
 router.get("/logout",userController.logout);
