@@ -1,0 +1,131 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+
+<div id="filter-container" class="mt-3">
+  <div id="filters">
+    <a href="/listings/catogery/mountains">
+      <div class="filter-item">
+        <i class="fa-solid fa-mountain filter-icon"></i>
+        <p class="filter-text">Mountains</p>
+      </div>
+    </a>
+
+    <a href="/listings/catogery/city">
+    <div class="filter-item">
+      <i class="fa-solid fa-city filter-icon"></i>
+      <p class="filter-text">City</p>
+    </div>
+   </a>
+   
+   <a href="/listings/catogery/castles">
+    <div class="filter-item">
+      <i class="fa-solid fa-building filter-icon"></i>
+      <p class="filter-text">Castles</p>
+    </div>
+   </a>
+
+   <a href="/listings/catogery/villas">
+    <div class="filter-item">
+      <i class="fa-solid fa-house filter-icon"></i>
+      <p class="filter-text">Villas</p>
+    </div>
+   </a>
+    
+   <a href="/listings/catogery/beach">
+      <div class="filter-item">
+        <i class="fa-solid fa-umbrella-beach filter-icon"></i>
+        <p class="filter-text">Beach</p>
+      </div>
+    </a>
+    
+    <a href="/listings/catogery/countryside">
+      <div class="filter-item">
+        <i class="fa-solid fa-tree filter-icon"></i>
+        <p class="filter-text">Countryside</p>
+      </div>
+    </a>
+    
+    <a href="/listings/catogery/bungalows">
+      <div class="filter-item">
+        <i class="fa-solid fa-home-lg-alt filter-icon"></i>
+        <p class="filter-text">Bungalows</p>
+      </div>
+    </a>
+    
+    <a href="/listings/catogery/ski resorts">
+      <div class="filter-item">
+        <i class="fa-solid fa-skiing filter-icon"></i>
+        <p class="filter-text">Ski Resorts</p>
+      </div>
+    </a>
+   
+    <a href="/listings/catogery/igloos">
+      <div class="filter-item">
+        <i class="fa-solid fa-snowflake filter-icon"></i>
+        <p class="filter-text">Igloos</p>
+      </div>
+    </a>
+    
+    <a href="/listings/catogery/forests">
+      <div class="filter-item">
+        <i class="fa-solid fa-tree-city filter-icon"></i>
+        <p class="filter-text">Forests</p>
+      </div>
+    </div>
+    </a>
+   
+
+  <div id="tax-toggle-container" class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Display Taxes</label>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+<h3 class="page-title">Explore Roam Roster</h3>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+  <% for(let list of catogeryListings) {%>
+    <a href="/listings/<%= list._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img 
+          src="<%= list.image.url %>" 
+          class="card-img-top" 
+          alt="listing_image" 
+          style="height: 18rem; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title"><%= list.title %></h5>
+          <p class="card-text">
+            &#8377;<%= list.price.toLocaleString("en-IN") %> / night      <h6 style="color: #fe424d;" class="tax-info">+10% GST</h6>
+          </p>
+        </div>
+      </div>
+    </a>
+  <% } %>
+</div>
+
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  taxSwitch.addEventListener("click",()=>{
+
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for(info of taxInfo){
+      if(info.style.display != "inline"){
+        info.style.display = "inline";
+       
+      }
+      else{
+        info.style.display = "none";
+      }
+    }
+     
+  })
+</script>

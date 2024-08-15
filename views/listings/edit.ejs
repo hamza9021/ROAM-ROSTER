@@ -1,0 +1,69 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="form-container">
+    <div class="form-box">
+        <h3 class="form-title">Edit Your Listing</h3>
+        <form method="post" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="listing[title]" value="<%= listing.title %>" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Title should be valid</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Description is necessary</div>
+            </div>
+            <div class="mb-3" id="previewImgForm">
+                <label for="image" class="form-label" >Update Image</label>
+                <input type="file" name="listing[image]" class="form-control" >
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Enter correct url link</div>
+            </div>
+            <div class="mb-4" id="previewImg" style="transition: opacity 0.2s ease-in-out;">
+                <img style="border-radius: 1rem;"src="<%= originalImageUrl %>" alt="Descriptive text about the image" style="max-width: 100%; height: auto;" onError="this.onerror=null; this.src='fallbackImageUrl';">
+            </div>
+            
+            
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" name="listing[price]" value="<%= listing.price %>" class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Valid price is necessary</div>
+                </div>
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control" required>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Enter country name</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="catogery" class="form-label">Catogery</label>
+                <select id="catogery" name="listing[catogery]" class="form-control">
+                    <option  value="mountains">Mountains</option>
+                    <option  value="city">City</option>
+                    <option  value="castles">Castles</option>
+                    <option value="countryside">CountrySide</option>
+                    <option  value="villas">Villas</option>
+                    <option  value="beach">Beach</option>
+                    <option  value="bungalows">Bungalows</option>
+                    <option  value="ski resorts">Ski Resorts</option>
+                    <option  value="igloos">Igloos</option>
+                    <option  value="forests">Forests</option>
+                </select>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Location should be necessary</div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Location should be necessary</div>
+            </div>
+            <button class="btn-edit">Edit</button>
+        </form>
+    </div>
+</div>

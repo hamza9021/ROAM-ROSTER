@@ -1,0 +1,133 @@
+/* MAP */
+
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+  }
+  
+  #filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .filter-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    max-width: 120px;
+    text-align: center;
+  }
+  
+  .filter-item:hover {
+    background-color: #fe424d;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+  }
+  
+  .filter-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  #tax-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-check.form-switch {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-check-input {
+    width: 60px;
+    height: 34px;
+    margin-right: 1rem;
+  }
+  
+  .form-check-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  #filter-container a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #tax-toggle-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: auto;
+    border: 1px solid black;
+    padding: 1rem 0.7rem;
+    border-radius: 1rem;
+  }
+  
+  #tax-toggle-container .form-check-input {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    appearance: none;
+  }
+  
+  #tax-toggle-container .form-check-input:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s;
+    left: 2px;
+    bottom: 2px;
+  }
+  
+  #tax-toggle-container .form-check-input:checked {
+    background-color: #fe424d;
+  }
+  
+  #tax-toggle-container .form-check-input:checked:before {
+    transform: translateX(20px);
+  }
+  
+  #tax-toggle-container .form-check-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #333;
+    margin-left: 0.5rem;
+  }
+  
+  .tax-info {
+    display: none;
+  }
+  

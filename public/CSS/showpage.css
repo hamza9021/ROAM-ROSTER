@@ -1,0 +1,251 @@
+/* SHOW PAGE */
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  ::selection {
+    background-color: #FF385C;
+    color: white;
+  }
+  
+  #listing-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  #listing-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #listing-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  #listing-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  #listing-card-body {
+    padding: 1.5rem;
+    background-color: #fff;
+  }
+  
+  #listing-description {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  #listing-price {
+    font-size: 1.25rem;
+    color: #FF385C;
+  }
+  
+  #listing-location, #listing-country {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  #listing-actions {
+    margin-top: 2rem;
+  }
+  
+  #btn-custom-edit,
+  #btn-custom-delete,
+  #btn-custom-submit {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #btn-custom-edit {
+    background-color: #20c997;
+    border-color: #20c997;
+    color: #fff;
+  }
+  
+  #btn-custom-edit:hover {
+    background-color: #1aa179;
+    border-color: #188f6e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #btn-custom-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+  
+  #btn-custom-delete:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #btn-custom-submit {
+    background-color: #20c997;
+    color: #fff;
+    border-color: #20c997;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  #btn-custom-submit:hover {
+    background-color: #1aa179;
+    border-color: #1aa179;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #comment-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #rating, #comment {
+    margin-bottom: 1.5rem;
+  }
+  
+  #form-label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .form-control, .form-range {
+    border-radius: 0.5rem;
+  }
+  
+  #reviews-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #review-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  #review-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  #review-author {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #review-comment {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  #btn-custom-review-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  #btn-custom-review-delete:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  @media (max-width: 1199.98px) {
+    #listing-title {
+        font-size: 1.75rem;
+    }
+    
+    #listing-price {
+        font-size: 1.125rem;
+    }
+  
+    #comment-title {
+        font-size: 1.25rem;
+    }
+  
+    #reviews-title {
+        font-size: 1.125rem;
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .col-md-8, .col-md-10 {
+        width: 100%;
+        padding: 0;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    #listing-title {
+        font-size: 1.5rem;
+    }
+  
+    #listing-description {
+        font-size: 0.875rem;
+    }
+  
+    #listing-price {
+        font-size: 1rem;
+    }
+  
+    #comment-title {
+        font-size: 1.125rem;
+    }
+  
+    #reviews-title {
+        font-size: 1rem;
+    }
+  
+    .card-img-top {
+        height: auto;
+    }
+  
+    .form-control {
+        font-size: 0.875rem;
+    }
+  
+    #btn-custom-edit,
+    #btn-custom-delete,
+    #btn-custom-submit {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+  }
+  
+  
+  
+  
