@@ -8,7 +8,7 @@ const reviewController = require("../controllers/review.js");
 //REVIEWS post route
 router.post("/",
     isLoggedIn,
-    validateReview,
+    // validateReview,
     reviewController.createReview);
 //DELETE REVIEW ROUTE
 router.delete("/:reviewId",
