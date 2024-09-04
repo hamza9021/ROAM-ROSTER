@@ -1,133 +1,156 @@
 /* MAP */
-
 #map {
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    margin-top: 20px;
-  }
-  
-  #filter-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
+}
+
+/* Base Styles */
+#filter-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-top: 20px !important;
+}
+
+#filters {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.filter-item {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  padding: 1rem !important;
+  border: 1px solid #ddd !important;
+  border-radius: 12px !important;
+  background-color: #fff !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s !important, box-shadow 0.3s !important, transform 0.3s !important;
+  text-align: center !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  max-width: 180px !important;
+  text-decoration: none !important;
+  color: #333 !important;
+}
+
+.filter-item:hover {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-3px) !important;
+}
+
+.filter-icon {
+  font-size: 2.5rem !important;
+  margin-bottom: 0.5rem !important;
+  color: #000 !important;
+}
+
+.filter-item:hover .filter-icon {
+  color: #fff !important;
+}
+
+.filter-text {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin: 0 !important;
+}
+
+/* Tax Toggle Styling */
+#tax-toggle-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid #ddd !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 12px !important;
+  background-color: #f9f9f9 !important;
+  margin-top: 1rem !important;
+}
+
+.form-check-input {
+  width: 40px !important;
+  height: 20px !important;
+  cursor: pointer !important;
+  background-color: #ccc !important;
+  border-radius: 20px !important;
+  position: relative !important;
+  appearance: none !important;
+  transition: background-color 0.3s !important;
+}
+
+.form-check-input:before {
+  content: "" !important;
+  position: absolute !important;
+  height: 16px !important;
+  width: 16px !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+  transition: transform 0.3s !important;
+  left: 2px !important;
+  bottom: 2px !important;
+}
+
+.form-check-input:checked {
+  background-color: #fe424d !important;
+}
+
+.form-check-input:checked:before {
+  transform: translateX(20px) !important;
+}
+
+.form-check-label {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-left: 0.5rem !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   #filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
   }
-  
-  .filter-item {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0.75rem 1.25rem;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    max-width: 120px;
-    text-align: center;
-  }
-  
-  .filter-item:hover {
-    background-color: #fe424d;
-    color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-  }
-  
-  .filter-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .filter-text {
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  
-  #tax-toggle {
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-check.form-switch {
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-check-input {
-    width: 60px;
-    height: 34px;
-    margin-right: 1rem;
-  }
-  
-  .form-check-label {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  #filter-container a {
-    text-decoration: none;
-    color: black;
-  }
-  
+
   #tax-toggle-container {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    margin-left: auto;
-    border: 1px solid black;
-    padding: 1rem 0.7rem;
-    border-radius: 1rem;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
   }
-  
-  #tax-toggle-container .form-check-input {
-    width: 40px;
-    height: 20px;
-    cursor: pointer;
-    background-color: #ccc;
-    border-radius: 20px;
-    position: relative;
-    appearance: none;
+
+  .form-check-input {
+    width: 34px !important;
+    height: 20px !important;
   }
-  
-  #tax-toggle-container .form-check-input:before {
-    content: "";
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background-color: white;
-    transition: transform 0.3s;
-    left: 2px;
-    bottom: 2px;
+
+  .form-check-label {
+    margin-left: 0 !important;
+    margin-top: 0.5rem !important;
   }
-  
-  #tax-toggle-container .form-check-input:checked {
-    background-color: #fe424d;
+}
+
+@media (max-width: 576px) {
+  .filter-icon {
+    font-size: 2rem !important;
   }
-  
-  #tax-toggle-container .form-check-input:checked:before {
-    transform: translateX(20px);
+
+  .filter-text {
+    font-size: 0.875rem !important;
   }
-  
-  #tax-toggle-container .form-check-label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #333;
-    margin-left: 0.5rem;
+
+  #filter-container {
+    gap: 0.5rem !important;
   }
-  
-  .tax-info {
-    display: none;
-  }
-  
+}
+
+#filter-container a {
+  text-decoration: none !important;
+}
