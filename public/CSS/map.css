@@ -7,35 +7,69 @@
   margin-top: 20px;
 }
 
+/* Map Styling */
+.mapboxgl-popup-content {
+  padding: 15px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mapboxgl-popup-close-button {
+  font-size: 20px !important;
+  color: #fe424d !important;
+  top: 5px !important;
+  right: 5px !important;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-attrib {
+  font-size: 10px !important;
+}
+
+.mapboxgl-ctrl-geocoder {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.mapboxgl-ctrl-geocoder input[type='text'] {
+  font-size: 14px !important;
+}
+
 /* Base Styles */
 #filter-container {
   display: flex !important;
   flex-direction: column !important;
   gap: 1rem !important;
   margin-top: 20px !important;
+  align-items: center !important;
 }
 
 #filters {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
-  gap: 1rem !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
   justify-content: center !important;
   width: 100% !important;
+  max-width: 800px !important;
 }
 
 .filter-item {
   display: flex !important;
   align-items: center !important;
   flex-direction: column !important;
-  padding: 1rem !important;
+  padding: 0.75rem !important;
   border: 1px solid #ddd !important;
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   background-color: #fff !important;
   cursor: pointer !important;
-  transition: background-color 0.3s !important, box-shadow 0.3s !important, transform 0.3s !important;
+  transition: all 0.3s ease !important;
   text-align: center !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-  max-width: 180px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  width: 100px !important;
+  height: 100px !important;
   text-decoration: none !important;
   color: #333 !important;
 }
@@ -43,14 +77,16 @@
 .filter-item:hover {
   background-color: #fe424d !important;
   color: #fff !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
   transform: translateY(-3px) !important;
+  border-color: #fe424d !important;
 }
 
 .filter-icon {
-  font-size: 2.5rem !important;
+  font-size: 2rem !important;
   margin-bottom: 0.5rem !important;
-  color: #000 !important;
+  color: #fe424d !important;
+  transition: color 0.3s ease !important;
 }
 
 .filter-item:hover .filter-icon {
@@ -58,10 +94,15 @@
 }
 
 .filter-text {
-  font-size: 1rem !important;
+  font-size: 0.9rem !important;
   font-weight: 600 !important;
   color: #333 !important;
   margin: 0 !important;
+  transition: color 0.3s ease !important;
+}
+
+.filter-item:hover .filter-text {
+  color: #fff !important;
 }
 
 /* Tax Toggle Styling */
@@ -70,10 +111,16 @@
   align-items: center !important;
   justify-content: center !important;
   border: 1px solid #ddd !important;
-  padding: 0.75rem 1.25rem !important;
-  border-radius: 12px !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 10px !important;
   background-color: #f9f9f9 !important;
   margin-top: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+#tax-toggle-container:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  border-color: #fe424d !important;
 }
 
 .form-check-input {
@@ -108,46 +155,79 @@
 }
 
 .form-check-label {
-  font-size: 0.875rem !important;
+  font-size: 0.9rem !important;
   font-weight: 500 !important;
   color: #333 !important;
-  margin-left: 0.5rem !important;
+  margin-left: 0.75rem !important;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  #map {
+    height: 300px;
+  }
+
   #filters {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  .filter-item {
+    width: 80px !important;
+    height: 80px !important;
+    padding: 0.5rem !important;
+  }
+
+  .filter-icon {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .filter-text {
+    font-size: 0.7rem !important;
   }
 
   #tax-toggle-container {
-    flex-direction: column !important;
+    flex-direction: row !important;
     align-items: center !important;
-    width: 100% !important;
+    width: auto !important;
   }
 
   .form-check-input {
     width: 34px !important;
-    height: 20px !important;
+    height: 18px !important;
   }
 
   .form-check-label {
-    margin-left: 0 !important;
-    margin-top: 0.5rem !important;
+    margin-left: 0.5rem !important;
   }
 }
 
 @media (max-width: 576px) {
+  #map {
+    height: 250px;
+  }
+
+  .filter-item {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
   .filter-icon {
-    font-size: 2rem !important;
+    font-size: 1.2rem !important;
   }
 
   .filter-text {
-    font-size: 0.875rem !important;
+    font-size: 0.6rem !important;
   }
 
   #filter-container {
     gap: 0.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #map {
+    height: 200px;
   }
 }
 

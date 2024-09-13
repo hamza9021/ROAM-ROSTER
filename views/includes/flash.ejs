@@ -1,14 +1,40 @@
 <% if(success && success.length){ %>
-    <div class="alert alert-success fade show  alert-dismissible col-6 offset-3" role="alert">
+    <div class="alert alert-success fade show alert-dismissible col-md-6 offset-md-3 col-sm-10 offset-sm-1 mt-3" role="alert" id="successAlert">
         <%= success %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>
 
-
 <% if(error && error.length){ %>
-    <div class="alert alert-danger fade show  alert-dismissible col-6 offset-3" role="alert">
+    <div class="alert alert-danger fade show alert-dismissible col-md-6 offset-md-3 col-sm-10 offset-sm-1 mt-3" role="alert" id="errorAlert">
         <%= error %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>
+
+<style>
+    .alert {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        transition: opacity 1.5s ease-in-out;
+    }
+    @media (max-width: 576px) {
+        .alert {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+</style>
+
+<script>
+    setTimeout(function() {
+        var alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            alert.style.opacity = '0';
+            setTimeout(function() {
+                alert.style.display = 'none';
+            }, 1500);
+        });
+    }, 1000);
+</script>
