@@ -95,7 +95,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const port = 8080;
-app.listen(port, () => {
+app.listen(8080 || 5050 || 3000 || 7800, () => {
     console.log(`Server is running on port ${port}`);
 });
